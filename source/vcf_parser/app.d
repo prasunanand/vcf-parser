@@ -46,7 +46,7 @@ void main(string[] args){
     auto id = ids[0];
     auto reference = to!string(tokens[3]);
     auto alternate = to!string(tokens[4]);
-    auto qual = to!double(tokens[5]);
+    auto qual = to!string(tokens[5]);
     auto filter = to!string(tokens[6]);
     auto info = tokens[7].split(";");
 
@@ -58,6 +58,7 @@ void main(string[] args){
     outfile.write("alternate => ", alternate);
     outfile.write("qual => ", qual);
     outfile.write("filter => ", filter);
+    outfile.write("\n");
 
     double[string] map_info_to_val;
     foreach(item; info){
